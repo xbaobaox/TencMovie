@@ -27,7 +27,7 @@ export default {
         width: 160,
         freeMode: true,
         //右边框和边距的偏移量 px单位
-        slidesOffsetAfter:-230
+        slidesOffsetAfter:-180
       },
       favoriteItem: [
         {

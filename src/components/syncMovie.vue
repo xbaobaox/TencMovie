@@ -1,6 +1,6 @@
 <template>
   <div class="sync-movie">
-    <h3 class="title">同步剧场</h3>
+    <h3 class="title">{{syncData.title}}</h3>
     <div class="sync-box">
       <div
         class="sync-item"
@@ -30,14 +30,14 @@ export default {
 </script>
 <style lang="less" scoped>
 .title {
-  margin: 10px 0px 10px 15px;
+  margin: 10px 0px 10px 20px;
 }
 .sync-box {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 5px;
+  padding: 0 20px;
   .sync-item {
     width: 47%;
     margin-bottom: 10px;
@@ -53,15 +53,10 @@ export default {
     }
     img {
       width: 100%;
-      padding: 0px;
-    }
-    img:first-child {
-      padding: 0;
     }
   }
 }
 .sync-item:first-child {
-  padding: 0 10px;
   width: 100%;
 }
 </style>

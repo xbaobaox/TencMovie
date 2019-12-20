@@ -11,6 +11,7 @@
     <childChoice />
     <!-- 奇数展示 -->
     <syncMovie :syncData='sync'/>
+    <syncMovie :syncData='variety'/>
   </div>
 </template>
 
@@ -37,7 +38,8 @@ export default {
       info: {},
       favorite: {},
       reco: {},
-      sync: {}
+      sync: {},
+      variety:{},
     };
   },
   created() {
@@ -52,6 +54,7 @@ export default {
         this.reco = data.data.data[2];
         // console.log(this.reco)
         this.sync = data.data.data[3];
+        this.variety=data.data.data[4];
       });
   }
 };
