@@ -20,9 +20,6 @@ export default {
   props:{
     showMovieData:''
   },
-  mounted(){
-    console.log(this.showMovieData)
-  },
   data() {
     return {
       swiperContOption: {

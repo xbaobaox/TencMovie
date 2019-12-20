@@ -27,7 +27,7 @@ export default {
         width: 160,
         freeMode: true,
         //右边框和边距的偏移量 px单位
-        slidesOffsetAfter:-180
+        slidesOffsetAfter:-230
       },
       favoriteItem: [
         {
@@ -102,7 +102,7 @@ export default {
 .favorite-box {
   padding: 0 25px;
   .favorite-img {
-    width: 40vw;
+    width: 135%;
   }
   .favorite-name {
     margin: 3px 0;

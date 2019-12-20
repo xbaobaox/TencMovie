@@ -21,8 +21,8 @@ export default {
     return {
       childSwiperOptions: {
         freeMode:true,
-        width: 250,
-        slidesOffsetAfter:-100
+        width: 160,
+        slidesOffsetAfter:-230
       },
       choice: [
         {
