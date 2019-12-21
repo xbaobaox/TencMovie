@@ -1,6 +1,6 @@
 <template>
   <div class="recommend">
-    <h3 class="recommend-title">重磅·2019游戏收官大作 注册送VIP</h3>
+    <h3 class="recommend-title">{{recommendData.title}}</h3>
     <div class="reco-box" >
       <div class="item" v-for="(item, index) of recommendData.list" :key="index">
         <img :src="item.img" alt="" />

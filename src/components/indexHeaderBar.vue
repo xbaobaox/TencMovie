@@ -13,18 +13,27 @@
     </div>
     <div class="index-bar">
       <swiper :options="swiperIndexOption">
-        <swiper-slide v-for="(item,index) of indexBar" :key="index" class="swiperitem" >
-          <p class="item-name" :class="{fontcolor:x==index}" @click='seleted(index)' >{{item.name}}
-            <span :class="{line:x==index}" ></span>
+        <swiper-slide
+          v-for="(item, index) of indexBar"
+          :key="index"
+          class="swiperitem"
+        >
+          <p
+            class="item-name"
+            :class="{ fontcolor: x == index }"
+            @click="seleted(index)"
+          >
+            {{ item.name }}
+            <span :class="{ line: x == index }"></span>
           </p>
         </swiper-slide>
       </swiper>
     </div>
-    
   </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "indexHeaderBar",
 
@@ -33,15 +42,26 @@ export default {
       x: 0,
       swiperIndexOption: {
         freeMode: true,
-        // spaceBetween: 0,
         width: 55,
-        slidesOffsetAfter:-190
+        slidesOffsetAfter: -190
       },
       indexBar: [
-        { name: "精选" },
-        { name: "电视剧" },
-        { name: "VIP" },
-        { name: "电影" },
+        {
+          
+          name: "精选"
+        },
+        {
+          type: 1,
+          name: "电视剧"
+        },
+        {
+          type: "",
+          name: "VIP"
+        },
+        {
+          type: 2,
+          name: "电影"
+        },
         { name: "综艺" },
         { name: "动漫" },
         { name: "少儿" },
@@ -56,6 +76,19 @@ export default {
     seleted(index) {
       console.log(index);
       this.x = index;
+      let typeNum = {};
+      if (this.indexBar[this.x].type) {
+        typeNum["type"] = this.indexBar[this.x].type;
+        
+      }
+      axios
+        .get("https://www.shuipingguo.com/2h4g/getvideo", {
+          params: {type:typeNum.type}
+        })
+        .then(data => {
+          console.log(data);
+          this.$store.commit("TELEPLAY", data);
+        });
     }
   }
 };

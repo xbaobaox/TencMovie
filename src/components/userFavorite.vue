@@ -1,6 +1,6 @@
 <template>
   <div class="userfavorite">
-    <h3 class="title">猜你会追</h3>
+    <h3 class="title">{{favoriteData.title}}</h3>
     <swiper :options="userFavoriteOptions" >
       <swiper-slide v-for="(item,index) of favoriteData.list" :key="index">
         <div class="favorite-box">
