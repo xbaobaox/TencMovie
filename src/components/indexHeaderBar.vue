@@ -47,11 +47,10 @@ export default {
       },
       indexBar: [
         {
-          
           name: "精选"
         },
         {
-          type: 1,
+          type: 2,
           name: "电视剧"
         },
         {
@@ -59,13 +58,22 @@ export default {
           name: "VIP"
         },
         {
-          type: 2,
+          type: 1,
           name: "电影"
         },
-        { name: "综艺" },
-        { name: "动漫" },
+        {
+          type: 3,
+          name: "综艺"
+        },
+        {
+          type: 4,
+          name: "动漫"
+        },
         { name: "少儿" },
-        { name: "娱乐" },
+        {
+          type: 5,
+          name: "娱乐"
+        },
         { name: "潮音" },
         { name: "游戏" },
         { name: "纪录片" }
@@ -74,19 +82,18 @@ export default {
   },
   methods: {
     seleted(index) {
-      console.log(index);
+      // console.log(index);
       this.x = index;
       let typeNum = {};
       if (this.indexBar[this.x].type) {
         typeNum["type"] = this.indexBar[this.x].type;
-        
       }
       axios
         .get("https://www.shuipingguo.com/2h4g/getvideo", {
-          params: {type:typeNum.type}
+          params: { type: typeNum.type }
         })
         .then(data => {
-          console.log(data);
+          // console.log(data);
           this.$store.commit("TELEPLAY", data);
         });
     }

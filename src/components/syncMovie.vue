@@ -24,7 +24,7 @@ export default {
     syncData: Object
   },
   mounted() {
-    console.log(this.syncData);
+    // console.log(this.syncData);
   }
 };
 </script>

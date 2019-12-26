@@ -63,11 +63,11 @@ export default {
       return this.$store.state.teleplayChange
     }
   },
-  created() {
+  beforecreated() {
     axios
       .get("https://www.shuipingguo.com/2h4g/getvideo", { params: {} })
       .then(data => {
-        console.log(data);
+        // console.log(data);
         // this.allCom = data.data;
         this.$store.commit("TELEPLAY", data);
       });
