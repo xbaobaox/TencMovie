@@ -34,6 +34,7 @@
 
 <script>
 import axios from "axios";
+
 export default {
   name: "indexHeaderBar",
 
@@ -54,7 +55,7 @@ export default {
           name: "电视剧"
         },
         {
-          type: "",
+          type: "vip",
           name: "VIP"
         },
         {
@@ -80,16 +81,20 @@ export default {
       ]
     };
   },
+
   methods: {
     seleted(index) {
-      // console.log(index);
       this.x = index;
       let typeNum = {};
-      if (this.indexBar[this.x].type) {
+      let url = "https://www.shuipingguo.com/2h4g/getvideo";
+      if (typeof this.indexBar[this.x].type == "number") {
         typeNum["type"] = this.indexBar[this.x].type;
+      } else if (this.indexBar[this.x].type == "vip") {
+        this.$router.push("/vip");
+        url="https://www.shuipingguo.com/2h4g/getvideo/list_vip"
       }
       axios
-        .get("https://www.shuipingguo.com/2h4g/getvideo", {
+        .get(url, {
           params: { type: typeNum.type }
         })
         .then(data => {

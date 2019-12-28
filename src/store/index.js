@@ -16,7 +16,7 @@ export default new Vuex.Store({
     [TELEPLAY](state, teleplayData) {
       // console.log(teleplayData)
       state.teleplayChange = teleplayData.data
-      console.log(state.teleplayChange)
+      // console.log(state.teleplayChange)
     }
   },
   modules: {}
