@@ -4,19 +4,23 @@ import VueAwesomeSwiper from "vue-awesome-swiper";
 import "swiper/dist/css/swiper.css";
 Vue.use(Vuex);
 Vue.use(VueAwesomeSwiper /* { default global options } */);
-const TELEPLAY="TELEPLAY"
+const TELEPLAY = "TELEPLAY";
+const SEARCHDATA = "SEARCHDATA";
 export default new Vuex.Store({
   actions: {},
   state: {
-    teleplayChange:{}
+    teleplayChange: {},
+    searchStoreData: {}
   },
-  
+
   mutations: {
     //[TLELEPLAY](state//改变的数据, teleplayDate//原始数据)
     [TELEPLAY](state, teleplayData) {
-      // console.log(teleplayData)
-      state.teleplayChange = teleplayData.data
-      // console.log(state.teleplayChange)
+      state.teleplayChange = teleplayData.data;
+    },
+    [SEARCHDATA](state, searchData) {
+      console.log(searchData);
+      state.searchStoreData = searchData;
     }
   },
   modules: {}

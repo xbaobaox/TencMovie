@@ -98,7 +98,6 @@ export default {
           params: { type: typeNum.type }
         })
         .then(data => {
-          // console.log(data);
           this.$store.commit("TELEPLAY", data);
         });
     }
