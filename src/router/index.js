@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import Vip from '../views/Vip.vue'
 import Home from '../views/Home.vue'
 import Search from '../views/Search.vue'
-
+import playPage from '../views/playPage.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -22,6 +22,11 @@ const routes = [
     path: '/search',
     name:'search',
     component:Search
+  },
+  {
+    path: '/playpage',
+    name: 'playpage',
+    component:playPage
   }
   // {
   //   path: '/about',

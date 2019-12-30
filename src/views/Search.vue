@@ -42,7 +42,7 @@
 
 <script>
 import axios from "axios";
-import {getSearch} from "../API/getData.js";
+import { getSearch } from "../API/getData.js";
 export default {
   name: "Search",
   data() {

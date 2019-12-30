@@ -10,6 +10,11 @@
 <script>
 export default {
   name: "vipItem",
+  data(){
+    return {
+
+    }
+  },
   computed: {
     vipItem() {
       return this.$store.state.teleplayChange;
@@ -36,6 +41,9 @@ export default {
       margin: 0px 0;
       font-size: 12px;
       color: #333;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 }
