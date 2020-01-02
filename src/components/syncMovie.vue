@@ -8,7 +8,9 @@
         :key="index"
       >
         <i class="cloud">
+          <router-link to="/playPage">
           <img :src="item.img" alt="" />
+          </router-link>
           <span class=""></span>
         </i>
         <p class="name">{{ item.name }}</p>

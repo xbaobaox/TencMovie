@@ -3,11 +3,13 @@
     <div class="search-bar">
       <div class="search-box">
         <input type="text" placeholder="庆余年" class="search-input" />
-        <img
-          src="../assets/images/fangdajing.png"
-          alt="search"
-          class="search-icon"
-        />
+        <router-link to="./search">
+          <img
+            src="../assets/images/fangdajing.png"
+            alt="search"
+            class="search-icon"
+          />
+        </router-link>
       </div>
     </div>
     <div class="filter">
@@ -265,7 +267,7 @@ export default {
       height: 25px;
       margin-top: 10px;
       margin-right: 20px;
-      background: url(../assets/images/g_menubar_btn.png) -75px 0  no-repeat;
+      background: url(../assets/images/g_menubar_btn.png) -75px 0 no-repeat;
       background-size: 100px 26px;
       background-size: 100px 26px;
     }

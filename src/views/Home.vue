@@ -9,14 +9,14 @@
       <syncMovie v-else-if="item.type == 4" :syncData="item" />
     </div>
     <!-- 定时swiper -->
-    <showMovie :showMovieData="info" />
+    <!-- <showMovie :showMovieData="info" /> -->
     <!-- 滚动swiper -->
-    <userFavorite :favoriteData="favorite" />
+    <!-- <userFavorite :favoriteData="favorite" /> -->
     <!-- 双列展示 -->
     <!-- <recommend :recommendData="reco" /> -->
     <!-- 奇数展示 -->
-    <syncMovie :syncData="sync" />
-    <syncMovie :syncData="variety" />
+    <!-- <syncMovie :syncData="sync" /> -->
+    <!-- <syncMovie :syncData="variety" /> -->
   </div>
 </template>
 
@@ -39,7 +39,6 @@ export default {
   },
   data() {
     return {
-      // allCom:{},
       info: {},
       favorite: {},
       reco: {},
@@ -66,8 +65,6 @@ export default {
     axios
       .get("https://www.shuipingguo.com/2h4g/getvideo", { params: {} })
       .then(data => {
-        // console.log(data);
-        // this.allCom = data.data;
         this.$store.commit("TELEPLAY", data);
       });
   }

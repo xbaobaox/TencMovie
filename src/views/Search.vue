@@ -3,7 +3,8 @@
     <div class="header">
       <img src="../assets/images/QuanWangSou.png" alt="" />
       <div class="input-box">
-        <input type="text" placeholder="庆余年" />
+        <!-- 搜索事件 -->
+        <input type="text" placeholder="庆余年" @input="handleInput" />
       </div>
       <router-link to="/" class="back">返回</router-link>
     </div>
@@ -43,11 +44,13 @@
 <script>
 import axios from "axios";
 import { getSearch } from "../API/getData.js";
+
 export default {
   name: "Search",
   data() {
     return {
       x: 0,
+      inputValue: "",
       searchOptions: {
         freeMode: "true",
         width: 58,
@@ -107,22 +110,20 @@ export default {
     }
   },
   beforeCreate() {
-    // axios
-    // .get("https://www.shuipingguo.com/getvideo/search", {
-    //   params: { kw: 1 }
-    // })
-    getSearch({ kw: 1 }).then(data => {
+    getSearch({ kw: '中' }).then(data => {
       this.$store.commit("SEARCHDATA", data);
     });
   },
   methods: {
+    handleInput(e) {
+      this.inputValue = e.target.value;
+      getSearch({kw:this.inputValue}).then(data => {
+          this.$store.commit("SEARCHDATA", data);
+        });
+    },
     seleted(index) {
       this.x = index;
-      axios
-        .get("https://www.shuipingguo.com/getvideo/search", {
-          params: { kw: index + 1 }
-        })
-        .then(data => {
+      getSearch({kw:this.inputValue}).then(data => {
           this.$store.commit("SEARCHDATA", data);
         });
     }

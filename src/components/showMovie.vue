@@ -4,7 +4,9 @@
       <swiper :options="swiperContOption" >
         <swiper-slide v-for="(item,index) of showMovieData.list" :key='index' >
           <div class="show-box">
+            <router-link to="/playPage">
             <img :src="item.img" alt="" class="show-img" />
+            </router-link>
             <p class="update">更新至{{ item.number }}集</p>
             <p class="title">{{ item.summary }}</p>
           </div>

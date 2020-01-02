@@ -1,15 +1,21 @@
 <template>
   <div class="recommend">
-    <h3 class="recommend-title">{{recommendData.title}}</h3>
-    <div class="reco-box" >
-      <div class="item" v-for="(item, index) of recommendData.list" :key="index">
-        <img :src="item.img" alt="" />
+    <h3 class="recommend-title">{{ recommendData.title }}</h3>
+    <div class="reco-box">
+      <div
+        class="item"
+        v-for="(item, index) of recommendData.list"
+        :key="index"
+      >
+        <router-link to="/playPage">
+          <img :src="item.img" alt="" />
+        </router-link>
         <p class="title">{{ item.name }}</p>
         <p class="desc">{{ item.summary }}</p>
       </div>
     </div>
     <div class="refresh">
-      <img src="../assets/images/refresh.png" alt="">
+      <img src="../assets/images/refresh.png" alt="" />
       <span>换一换</span>
     </div>
   </div>
@@ -17,8 +23,8 @@
 <script>
 export default {
   name: "recommend",
-  props:{
-    recommendData:Object
+  props: {
+    recommendData: Object
   },
   data() {
     return {
@@ -74,20 +80,20 @@ export default {
     }
   }
 }
-.refresh{
+.refresh {
   display: flex;
   width: 95%;
   margin: 0 auto;
-  border-top: 1px solid rgba(0, 0, 0, .1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 15px;
   align-items: center;
   justify-content: center;
-  img{
+  img {
     width: 12px;
     margin-right: 5px;
   }
-  span{
-    color:#999;
+  span {
+    color: #999;
     font-size: 12px;
   }
 }

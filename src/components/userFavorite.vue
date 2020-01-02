@@ -4,7 +4,9 @@
     <swiper :options="userFavoriteOptions" >
       <swiper-slide v-for="(item,index) of favoriteData.list" :key="index">
         <div class="favorite-box">
+          <router-link to="/playPage">
           <img :src="item.img" alt="" class="favorite-img" />
+          </router-link>
           <p class="favorite-name">{{item.name}}</p>
           <p class="favorite-desc" title="">{{item.summary}}</p>
         </div>

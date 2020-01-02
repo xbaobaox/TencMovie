@@ -1,7 +1,9 @@
 <template>
   <div class="vip-item">
     <div class="item-box" v-for="(item, index) of vipItem.data" :key="index">
+      <router-link to="/playPage">
       <img :src="item.imgv" alt="" />
+      </router-link>
       <span class="name">{{ item.name }}</span>
     </div>
   </div>

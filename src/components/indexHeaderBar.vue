@@ -1,14 +1,24 @@
 <template>
   <div class="index-header-bar-box">
     <div class="index-header-bar">
-      <img src="../assets/images/0.png" alt="" class="header-bar-logo" />
+      <!-- <router-link
+        to="/Search"
+        tag="img"
+        src="../assets/images/0.png"
+        class="header-bar-logo"
+      ></router-link> -->
+      <router-link to="/Home">
+        <img src="../assets/images/0.png" alt="" class="header-bar-logo" />
+      </router-link>
       <div class="header-input">
         <input type="text" placeholder="庆余年" />
-        <img
-          src="../assets/images/fangdajing.png"
-          alt=""
-          class="header-bar-fangdajing"
-        />
+        <router-link to="/Search">
+          <img
+            src="../assets/images/fangdajing.png"
+            alt=""
+            class="header-bar-fangdajing"
+          />
+        </router-link>
       </div>
     </div>
     <div class="index-bar">
@@ -91,7 +101,7 @@ export default {
         typeNum["type"] = this.indexBar[this.x].type;
       } else if (this.indexBar[this.x].type == "vip") {
         this.$router.push("/vip");
-        url="https://www.shuipingguo.com/2h4g/getvideo/list_vip"
+        url = "https://www.shuipingguo.com/2h4g/getvideo/list_vip";
       }
       axios
         .get(url, {
